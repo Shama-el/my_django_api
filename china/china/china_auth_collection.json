@@ -1,0 +1,96 @@
+{
+  "info": {
+    "name": "China API Auth",
+    "_postman_id": "12345-abcde-67890-fghij",
+    "description": "Authentication APIs for Django REST Framework project 'china'",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Home",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": [""]
+        }
+      }
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type","value":"application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"samwel\",\n    \"email\": \"samwel@example.com\",\n    \"first_name\": \"Samwel\",\n    \"last_name\": \"Nyagindu\",\n    \"password\": \"StrongPass123\",\n    \"password2\": \"StrongPass123\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/register/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api","auth","register"]
+        }
+      }
+    },
+    {
+      "name": "Login (JWT)",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type","value":"application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"username\": \"samwel\",\n    \"password\": \"StrongPass123\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/login/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api","auth","login"]
+        }
+      }
+    },
+    {
+      "name": "Password Reset Request",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type","value":"application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\": \"samwel@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/password-reset/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api","auth","password-reset"]
+        }
+      }
+    },
+    {
+      "name": "Logout (JWT)",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type","value":"application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"refresh\": \"<paste_refresh_token_here>\"\n}"
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/auth/logout/",
+          "protocol": "http",
+          "host": ["127.0.0.1"],
+          "port": "8000",
+          "path": ["api","auth","logout"]
+        }
+      }
+    }
+  ]
+}
